@@ -1,8 +1,8 @@
 {
     "filename": "PPSA01453.ffpkg",
-    "version": "1.10.0",
-    "url": "https://github.com/d3athly/blackbox/releases/download/1.10.0/PPSA01453.ffpkg",
-    "checksum": "8B1FE1B60FB45D1471D981611FBA6A12152A535C61A79F31A89A0471F396B006",
+    "version": "1.11.0",
+    "url": "https://github.com/d3athly/blackbox/releases/download/1.11.0/PPSA01453.ffpkg",
+    "checksum": "24CA5B28E8AC94502EA78231B45DDB23984932508F93F7E3E01EF6286E919561",
     "size": 140181504,
     "minimumVersion": "1.9.0"
 }
