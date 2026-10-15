@@ -1,17 +1,17 @@
 # BlackBox
 
 <p align="center">
-  <a href="https://github.com/D3ATHLY/blackbox/releases/latest"><img src="https://img.shields.io/github/v/release/D3ATHLY/blackbox?style=for-the-badge&label=Latest Release&labelColor=0b0b0d&color=2a2a2f" alt="Latest release"></a>
-  <a href="https://github.com/D3ATHLY/blackbox/releases"><img src="https://img.shields.io/github/downloads/D3ATHLY/blackbox/total?style=for-the-badge&label=downloads&labelColor=0b0b0d&color=2a2a2f" alt="Total downloads"></a>
-  <a href="https://github.com/D3ATHLY/blackbox/stargazers"><img src="https://img.shields.io/github/stars/D3ATHLY/blackbox?style=for-the-badge&label=stars&labelColor=0b0b0d&color=2a2a2f" alt="Stars"></a>
+  <a href="https://github.com/D3ATHLY/blackbox/releases/latest"><img src="https://img.shields.io/github/v/release/D3ATHLY/blackbox?style=for-the-badge&label=Latest%20Release&labelColor=0b0b0d&color=2a2a2f" alt="Latest release" width="390" height="56"></a>
+  <a href="https://github.com/D3ATHLY/blackbox/releases"><img src="https://img.shields.io/github/downloads/D3ATHLY/blackbox/total?style=for-the-badge&label=downloads&labelColor=0b0b0d&color=2a2a2f" alt="Total downloads" width="302" height="56"></a>
+  <a href="https://github.com/D3ATHLY/blackbox/stargazers"><img src="https://img.shields.io/github/stars/D3ATHLY/blackbox?style=for-the-badge&label=stars&labelColor=0b0b0d&color=2a2a2f" alt="Stars" width="224" height="56"></a>
 </p>
 
 BlackBox is a homebrew storefront and download manager developed for PS5 consoles.
 
 ## Latest Release & Installation
 
-* **Latest Release:** [Download Here]([https://github.com/BlackBoxPS5/blackbox/releases/latest](https://github.com/D3ATHLY/BLACKBOX/releases/latest/download/PPSA01453.ffpkg))
-* **Installation Instructions:** *Please refer directly to the [latest release page](https://github.com/BlackBoxPS5/blackbox/releases/latest) for the official step-by-step `.elf` / `.ffpkg` installation procedures provided by the developer.*
+* **Latest Release:** [Download Here](https://github.com/D3ATHLY/blackbox/releases/latest)
+* **Installation Instructions:** *Please refer directly to the [latest release page](https://github.com/D3ATHLY/blackbox/releases/latest) for the official step-by-step `.elf` / `.ffpkg` installation procedures provided by the developer.*
 
 ---
 
