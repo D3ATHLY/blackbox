@@ -1,6 +1,22 @@
 {
   "messages": [
     {
+      "id": "20261016-v1100-announce",
+      "ts": 1792105569,
+      "texts": {
+        "tr": "BlackBox 1.10.0 yayınlandı! 200'den fazla yeni oyun, PKG desteği, Viking/Archive.org girişi ve düzeltilmiş indirmeler. Güncelle: Ayarlar > Güncellemeler.",
+        "en": "BlackBox 1.10.0 is out! 200+ new games, PKG support, Viking/Archive.org sign-in and fixed downloads. Update: Settings > Updates.",
+        "de": "BlackBox 1.10.0 ist da! 200+ neue Spiele, PKG-Unterstützung, Viking/Archive.org-Anmeldung und behobene Downloads. Update: Einstellungen > Updates.",
+        "fr": "BlackBox 1.10.0 est là ! 200+ nouveaux jeux, support PKG, connexion Viking/Archive.org et téléchargements corrigés. Mise à jour : Réglages > Mises à jour.",
+        "es": "¡BlackBox 1.10.0 ya está! 200+ juegos nuevos, soporte PKG, inicio de sesión Viking/Archive.org y descargas corregidas. Actualiza: Ajustes > Actualizaciones.",
+        "ru": "BlackBox 1.10.0 вышел! 200+ новых игр, поддержка PKG, вход Viking/Archive.org и исправленные загрузки. Обновление: Настройки > Обновления.",
+        "ar": "صدر BlackBox 1.10.0! أكثر من 200 لعبة جديدة، دعم PKG، تسجيل دخول Viking/Archive.org وتنزيلات مُصلحة. التحديث: الإعدادات > التحديثات.",
+        "hu": "Megjelent a BlackBox 1.10.0! 200+ új játék, PKG-támogatás, Viking/Archive.org bejelentkezés és javított letöltések. Frissítés: Beállítások > Frissítések.",
+        "it": "BlackBox 1.10.0 è qui! 200+ nuovi giochi, supporto PKG, accesso Viking/Archive.org e download corretti. Aggiorna: Impostazioni > Aggiornamenti.",
+        "pt": "O BlackBox 1.10.0 chegou! 200+ novos jogos, suporte PKG, início de sessão Viking/Archive.org e transferências corrigidas. Atualiza: Definições > Atualizações."
+      }
+    },
+    {
       "id": "20261009-v108-announce",
       "ts": 1791554561,
       "texts": {
