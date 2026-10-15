@@ -1,7 +1,7 @@
 # BlackBox
 
 <p align="center">
-  <a href="https://github.com/D3ATHLY/blackbox/releases/latest"><img src="https://img.shields.io/github/v/release/D3ATHLY/blackbox?style=for-the-badge&label=release&labelColor=0b0b0d&color=2a2a2f" alt="Latest release"></a>
+  <a href="https://github.com/D3ATHLY/blackbox/releases/latest"><img src="https://img.shields.io/github/v/release/D3ATHLY/blackbox?style=for-the-badge&label=Latest Release&labelColor=0b0b0d&color=2a2a2f" alt="Latest release"></a>
   <a href="https://github.com/D3ATHLY/blackbox/releases"><img src="https://img.shields.io/github/downloads/D3ATHLY/blackbox/total?style=for-the-badge&label=downloads&labelColor=0b0b0d&color=2a2a2f" alt="Total downloads"></a>
   <a href="https://github.com/D3ATHLY/blackbox/stargazers"><img src="https://img.shields.io/github/stars/D3ATHLY/blackbox?style=for-the-badge&label=stars&labelColor=0b0b0d&color=2a2a2f" alt="Stars"></a>
 </p>
