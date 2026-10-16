@@ -6,6 +6,11 @@
   <a href="https://github.com/D3ATHLY/blackbox/stargazers"><img src="https://img.shields.io/github/stars/D3ATHLY/blackbox?style=for-the-badge&label=stars&labelColor=0b0b0d&color=2a2a2f" alt="Stars" width="224" height="56"></a>
 </p>
 
+<a href="https://www.buymeacoffee.com/BlackBoxPS" target="_blank" title="buymeacoffee">
+  <img src="https://iili.io/JIYVO7I.gif"  alt="buymeacoffee-animated-badge" style="width: 100px;">
+</a>
+
+
 BlackBox is a homebrew storefront and download manager developed for PS5 consoles.
 
 ## Latest Release & Installation
