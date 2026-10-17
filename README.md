@@ -23,7 +23,7 @@ BlackBox is a homebrew storefront and download manager developed for PS5 console
 
 * **Delete the Old File:** Manually delete the old **PPSA01453.ffpkg** file located inside the `/data/homebrew` directory.
 * **Uninstall Old Version:** Completely delete/uninstall the **older version of BlackBox** from your console.
-* **Download the Latest Version:** Get the updated file from the official [BlackBox Latest Release Page]([https://github.com/D3ATHLY/blackbox/releases/tag/1.0.9](https://github.com/D3ATHLY/blackbox/releases/latest)).
+* **Download the Latest Version:** Get the updated file from the official [BlackBox Latest Release Page] https://github.com/D3ATHLY/blackbox/releases/latest
 * **Transfer the New File:** Copy the newly downloaded **PPSA01453.ffpkg** file into the `/data/homebrew` folder.
 * **Trigger the Installation:** Use **shadowmount** to trigger and install the newly placed `.ffpkg` file.
 * **Reboot if Needed:** If you still encounter warnings or errors, restart your console and try again.
