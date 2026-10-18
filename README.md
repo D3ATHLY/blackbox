@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://www.buymeacoffee.com/BlackBoxPS" target="_blank" title="buymeacoffee">
-    <img src="https://iili.io/JIYVO7I.gif" alt="buymeacoffee-animated-badge">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2FoZmV2cW12NmxueGR6M25yOG50bHN2MndjbzJzamtmNDV2aWZ2YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/7kZE0z52Sd9zSESzDA/giphy.gif" alt="buymeacoffee-animated-badge">
   </a>
 </p>
 
