@@ -1,11 +1,11 @@
 {
-  "minimumVersion": "1.0.8",
-  "payloads": [
-    {
-      "filename": "blackbox.elf",
-      "version": "1.11.0",
-      "url": "https://github.com/d3athly/blackbox/releases/download/1.11.0/blackbox.elf",
-      "checksum": "b90b03325b673a65de21657d456d8da1fdb5d4f82f73c4dda033bf3547b34c60"
-    }
-  ]
+    "minimumVersion":  "1.0.8",
+    "payloads":  [
+                     {
+                         "url":  "https://github.com/d3athly/blackbox/releases/download/1.12.0/blackbox.elf",
+                         "checksum":  "fee147e11e5b1c73a2af1421687c77f8ca4fa15156333b0427e158c39d0607b6",
+                         "filename":  "blackbox.elf",
+                         "version":  "1.12.0"
+                     }
+                 ]
 }
