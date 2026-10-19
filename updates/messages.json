@@ -1,51 +1,19 @@
 {
   "messages": [
     {
-      "id": "20261016-v1100-announce",
-      "ts": 1792105569,
+      "id": "20261019-v1120-announce",
+      "ts": 1792437126,
       "texts": {
-        "tr": "BlackBox 1.10.0 yayınlandı! 200'den fazla yeni oyun, PKG desteği, Viking/Archive.org girişi ve düzeltilmiş indirmeler. Güncelle: Ayarlar > Güncellemeler.",
-        "en": "BlackBox 1.10.0 is out! 200+ new games, PKG support, Viking/Archive.org sign-in and fixed downloads. Update: Settings > Updates.",
-        "de": "BlackBox 1.10.0 ist da! 200+ neue Spiele, PKG-Unterstützung, Viking/Archive.org-Anmeldung und behobene Downloads. Update: Einstellungen > Updates.",
-        "fr": "BlackBox 1.10.0 est là ! 200+ nouveaux jeux, support PKG, connexion Viking/Archive.org et téléchargements corrigés. Mise à jour : Réglages > Mises à jour.",
-        "es": "¡BlackBox 1.10.0 ya está! 200+ juegos nuevos, soporte PKG, inicio de sesión Viking/Archive.org y descargas corregidas. Actualiza: Ajustes > Actualizaciones.",
-        "ru": "BlackBox 1.10.0 вышел! 200+ новых игр, поддержка PKG, вход Viking/Archive.org и исправленные загрузки. Обновление: Настройки > Обновления.",
-        "ar": "صدر BlackBox 1.10.0! أكثر من 200 لعبة جديدة، دعم PKG، تسجيل دخول Viking/Archive.org وتنزيلات مُصلحة. التحديث: الإعدادات > التحديثات.",
-        "hu": "Megjelent a BlackBox 1.10.0! 200+ új játék, PKG-támogatás, Viking/Archive.org bejelentkezés és javított letöltések. Frissítés: Beállítások > Frissítések.",
-        "it": "BlackBox 1.10.0 è qui! 200+ nuovi giochi, supporto PKG, accesso Viking/Archive.org e download corretti. Aggiorna: Impostazioni > Aggiornamenti.",
-        "pt": "O BlackBox 1.10.0 chegou! 200+ novos jogos, suporte PKG, início de sessão Viking/Archive.org e transferências corrigidas. Atualiza: Definições > Atualizações."
-      }
-    },
-    {
-      "id": "20261009-v108-announce",
-      "ts": 1791554561,
-      "texts": {
-        "tr": "BlackBox 1.0.8 yayınlandı! Ses ve müzik ayarları, daha temiz oyun sayfası, daha güvenilir indirmeler. Güncelle: Ayarlar > Güncellemeler.",
-        "en": "BlackBox 1.0.8 is out! Sound and music options, a cleaner game page, more reliable downloads. Update: Settings > Updates.",
-        "de": "BlackBox 1.0.8 ist da! Ton- und Musikoptionen, eine saubere Spielseite, zuverlässigere Downloads. Update: Einstellungen > Updates.",
-        "fr": "BlackBox 1.0.8 est là ! Options son et musique, page de jeu plus nette, téléchargements plus fiables. Mise à jour : Réglages > Mises à jour.",
-        "es": "¡BlackBox 1.0.8 ya está! Sonido y música, página de juego más limpia, descargas más fiables. Actualiza: Ajustes > Actualizaciones.",
-        "ru": "BlackBox 1.0.8 вышел! Настройки звука и музыки, чище страница игры, надёжнее загрузки. Обновление: Настройки > Обновления.",
-        "ar": "صدر BlackBox 1.0.8! إعدادات الصوت والموسيقى، صفحة لعبة أنظف، تنزيلات أكثر موثوقية. التحديث: الإعدادات > التحديثات.",
-        "hu": "Megjelent a BlackBox 1.0.8! Hang- és zenei beállítások, tisztább játékoldal, megbízhatóbb letöltések. Frissítés: Beállítások > Frissítések.",
-        "it": "BlackBox 1.0.8 è qui! Opzioni audio e musica, pagina gioco più pulita, download più affidabili. Aggiorna: Impostazioni > Aggiornamenti.",
-        "pt": "O BlackBox 1.0.8 chegou! Som e música, página de jogo mais limpa, transferências mais fiáveis. Atualiza: Definições > Atualizações."
-      }
-    },
-    {
-      "id": "20261008-024000",
-      "ts": 1791416400,
-      "texts": {
-        "tr": "Oyun kataloğu güncellendi. İyi eğlenceler dileriz!",
-        "en": "Game catalog has been updated. Have fun!",
-        "de": "Der Spielkatalog wurde aktualisiert. Viel Spaß!",
-        "fr": "Le catalogue de jeux a été mis à jour. Amusez-vous bien!",
-        "es": "El catálogo de juegos ha sido actualizado. ¡Que se diviertan!",
-        "ru": "Каталог игр обновлен. Хорошего времяпровождения!",
-        "ar": "تم تحديث كتالوج الألعاب. استمتع باللعب!",
-        "hu": "A játékkatalógus frissítve lett. Jó szórakozást!",
-        "it": "Il catalogo dei giochi è stato aggiornato. Buon divertimento!",
-        "pt": "O catálogo de jogos foi atualizado. Divirta-se!"
+        "tr": "BlackBox 1.12.0 yayınlandı! Torrent indirmeleri (magnet ve .torrent), 1900'den fazla oyun, gözat sayfasında sıralama düzeltmeleri ve 10 dile çeviriler.",
+        "en": "BlackBox 1.12.0 is out! Torrent downloads (magnet and .torrent), over 1900 games, browse sort fixes and 10-language translations.",
+        "de": "BlackBox 1.12.0 ist da! Torrent-Downloads (Magnet und .torrent), über 1900 Spiele, Stöbern-Fixes und Übersetzungen in 10 Sprachen.",
+        "fr": "BlackBox 1.12.0 est là ! Téléchargements torrent (magnet et .torrent), plus de 1900 jeux, corrections du tri et traductions en 10 langues.",
+        "es": "¡BlackBox 1.12.0 ya está! Descargas torrent (magnet y .torrent), más de 1900 juegos, correcciones de orden y traducciones a 10 idiomas.",
+        "ru": "Вышел BlackBox 1.12.0! Загрузки торрентов (magnet и .torrent), более 1900 игр, исправления сортировки и перевод на 10 языков.",
+        "ar": "صدر BlackBox 1.12.0! تنزيلات التورنت (magnet و .torrent)، أكثر من 1900 لعبة، إصلاحات الترتيب وترجمات بعشر لغات.",
+        "hu": "Megjelent a BlackBox 1.12.0! Torrent letöltések (magnet és .torrent), több mint 1900 játék, rendezési javítások és fordítások 10 nyelven.",
+        "it": "BlackBox 1.12.0 è arrivato! Download torrent (magnet e .torrent), oltre 1900 giochi, correzioni di ordinamento e traduzioni in 10 lingue.",
+        "pt": "BlackBox 1.12.0 saiu! Downloads torrent (magnet e .torrent), mais de 1900 jogos, correções de ordenação e traduções em 10 línguas."
       }
     }
   ]
