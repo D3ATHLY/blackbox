@@ -3,7 +3,7 @@
     "payloads":  [
                      {
                          "url":  "https://github.com/d3athly/blackbox/releases/download/1.12.0/blackbox.elf",
-                         "checksum":  "e4e0da2aab17493aa48ed6a4063271d526a9923e699fb5ddc4cf150d526aefc4",
+                         "checksum":  "066cd248590c570d2d568fd10142328d2b29cad5c72d26fcb644e200e07278a8",
                          "filename":  "blackbox.elf",
                          "version":  "1.12.0"
                      }
