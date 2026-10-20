@@ -5,7 +5,12 @@
       "filename": "blackbox.elf",
       "version": "1.12.1",
       "url": "https://github.com/d3athly/blackbox/releases/download/1.12.1/blackbox.elf",
-      "checksum": "7569cf9f749ad4489faeecd674f9edcd4615e1beff53fecfb07548cc1118cde5"
+      "checksum": "8e9568a7e63fea1fa47636f1b1cabe95b37350e94cb3be464d584130ceef33f6"
     }
-  ]
+  ],
+  "ffpkg": {
+    "version": "1.12.1",
+    "url": "https://github.com/d3athly/blackbox/releases/download/1.12.1/PPSA01453.ffpkg",
+    "checksum": "1d02d1761c02c193a3d5f7c5f0c6973cd714bf60255ab76f0df6d7854ae8fbea"
+  }
 }
