@@ -1,16 +1,16 @@
 {
     "payloads":  [
                      {
-                         "url":  "https://github.com/d3athly/blackbox/releases/download/1.12.2/blackbox.elf",
-                         "checksum":  "9470263fe1d2834f587441128f7abe8e03a33f140366ebfe1ebd5b86f3b8b5cf",
+                         "url":  "https://github.com/d3athly/blackbox/releases/download/1.12.3/blackbox.elf",
+                         "checksum":  "67f87f5a2ab7454f7cf1d7968ddc6e2c33e35cb2aa36c2102a537f3bc5e2d799",
                          "filename":  "blackbox.elf",
-                         "version":  "1.12.2"
+                         "version":  "1.12.3"
                      }
                  ],
     "ffpkg":  {
-                  "url":  "https://github.com/d3athly/blackbox/releases/download/1.12.2/PPSA01453.ffpkg",
-                  "checksum":  "c390c1b925f2694c2fbc8f965511cc2b4e6d82b678b66115ba0d40798f354a3b",
-                  "version":  "1.12.2"
+                  "url":  "https://github.com/d3athly/blackbox/releases/download/1.12.3/PPSA01453.ffpkg",
+                  "checksum":  "98a1443a3f675516406fbec00ca4a8b095b8c9637254a420b36c6efd890798d0",
+                  "version":  "1.12.3"
               },
     "minimumVersion":  "1.0.8"
 }
