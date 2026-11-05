@@ -20,6 +20,7 @@ BlackBox is a homebrew storefront and download manager developed for PS5 console
 ## Latest Release & Installation
 
 * **Latest Release:** [Download Here](https://github.com/D3ATHLY/blackbox/releases/latest)
+* ** BlackBox Store on PS5 - Download Games Directly on PS5 13.60 or lower: https://www.youtube.com/watch?v=tFAzQugrDfo
 * **Installation Instructions:** *Please refer directly to the [latest release page](https://github.com/D3ATHLY/blackbox/releases/latest) for the official step-by-step `.elf` / `.ffpkg` installation procedures provided by the developer.*
 
 ---
