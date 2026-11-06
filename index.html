@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="BlackBox is a homebrew storefront and download manager developed for PS5 consoles.">
+  <title>BlackBox — Homebrew for PS5</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101114;
+      --panel: #17191e;
+      --text: #f4f4f5;
+      --muted: #a4a7b0;
+      --accent: #b6f36b;
+      --line: #292c33;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 50% -20%, #27321e 0, transparent 48%), var(--bg);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 800; letter-spacing: .04em; }
+    .mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: var(--accent); color: #12150e; font-weight: 950; }
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: .94rem; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover, a:hover { color: var(--accent); }
+    .hero { padding: 105px 0 90px; text-align: center; }
+    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { margin: 16px 0; font-size: clamp(3rem, 9vw, 6.4rem); line-height: .98; letter-spacing: -.07em; }
+    h1 span { color: var(--accent); }
+    .lead { max-width: 650px; margin: 22px auto 30px; color: var(--muted); font-size: clamp(1.05rem, 2.4vw, 1.25rem); }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; font-weight: 700; }
+    .button.primary { border-color: var(--accent); background: var(--accent); color: #11140d; }
+    .button.primary:hover { color: #11140d; filter: brightness(1.08); }
+    section { padding: 58px 0; }
+    .section-heading { max-width: 650px; margin-bottom: 28px; }
+    h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.04em; }
+    .section-heading p, .card p { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--panel) 90%, transparent); }
+    .card .num { color: var(--accent); font-size: .82rem; font-weight: 800; letter-spacing: .12em; }
+    .card h3 { margin: 11px 0 6px; font-size: 1.15rem; }
+    .card p { margin: 0; }
+    .notice { padding: 22px 24px; border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; background: var(--panel); color: var(--muted); }
+    .notice strong { color: var(--text); }
+    .notice a { color: var(--accent); }
+    footer { margin-top: 40px; padding: 28px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    @media (max-width: 700px) {
+      .hero { padding: 76px 0 58px; }
+      .grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 12px; font-size: .84rem; }
+      .wrap { width: min(100% - 28px, 1080px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">B</span> BLACKBOX</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#getting-started">Getting started</a>
+        <a href="https://github.com/D3ATHLY/blackbox">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="eyebrow">A homebrew project for PS5</div>
+      <h1>Your library.<br><span>Your way.</span></h1>
+      <p class="lead">BlackBox is a homebrew storefront and download manager developed for PS5 consoles. Find the official project information and releases here.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/D3ATHLY/blackbox/releases/latest">View latest release <span aria-hidden="true">&nbsp;↗</span></a>
+        <a class="button" href="https://github.com/D3ATHLY/blackbox">Explore source code</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>About BlackBox</h2>
+          <p>Project updates, source code, and release information are maintained in the official GitHub repository.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="num">01 / PROJECT</div><h3>Homebrew storefront</h3><p>A community-developed storefront and download manager for PS5 consoles.</p></article>
+          <article class="card"><div class="num">02 / RELEASES</div><h3>Official downloads</h3><p>Get release files and version-specific installation notes from the official release page.</p></article>
+          <article class="card"><div class="num">03 / OPEN SOURCE</div><h3>Built in the open</h3><p>Review the source, read project documentation, or report a technical issue on GitHub.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="getting-started">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2>Getting started</h2>
+          <p>Always follow the instructions provided with the current official release.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><div class="num">STEP 01</div><h3>Read the release notes</h3><p>Check the latest release for current files, compatibility details, and installation guidance.</p></article>
+          <article class="card"><div class="num">STEP 02</div><h3>Review the documentation</h3><p>Consult the repository README and any release-specific notes before proceeding.</p></article>
+          <article class="card"><div class="num">STEP 03</div><h3>Need help?</h3><p>Use the project’s GitHub Issues page for technical questions or bug reports.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap notice"><strong>Important:</strong> BlackBox does not host game files or copyrighted content. Use the project only with content you are legally entitled to access, and comply with applicable laws and service terms. Software is provided as is; use it at your own risk. See the <a href="https://github.com/D3ATHLY/blackbox#disclaimer-and-terms-of-use">full disclaimer</a>.</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© <span id="year">2026</span> BlackBox contributors</span>
+      <span><a href="https://github.com/D3ATHLY/blackbox">GitHub</a> · <a href="https://github.com/D3ATHLY/blackbox/issues">Issues</a> · GPL-3.0-or-later</span>
+    </div>
+  </footer>
+</body>
+</html>
