@@ -3,128 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101114">
-  <meta name="description" content="BlackBox is a homebrew storefront and download manager developed for PS5 consoles.">
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="BlackBox — a community-built homebrew storefront and download manager for PS5. Project information, official releases, setup guidance, and support.">
+  <meta property="og:title" content="BlackBox — Explore beyond the ordinary">
+  <meta property="og:description" content="Official project information, releases, setup guidance, and community links for BlackBox.">
+  <meta property="og:type" content="website">
   <title>BlackBox — Homebrew for PS5</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #101114;
-      --panel: #17191e;
-      --text: #f4f4f5;
-      --muted: #a4a7b0;
-      --accent: #b6f36b;
-      --line: #292c33;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: radial-gradient(ellipse at 50% -20%, #27321e 0, transparent 48%), var(--bg);
-      color: var(--text);
-      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    a { color: inherit; }
-    .wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
-    header { padding: 22px 0; border-bottom: 1px solid var(--line); }
-    nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-weight: 800; letter-spacing: .04em; }
-    .mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: var(--accent); color: #12150e; font-weight: 950; }
-    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: .94rem; }
-    .nav-links a { text-decoration: none; }
-    .nav-links a:hover, a:hover { color: var(--accent); }
-    .hero { padding: 105px 0 90px; text-align: center; }
-    .eyebrow { color: var(--accent); font-size: .8rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
-    h1 { margin: 16px 0; font-size: clamp(3rem, 9vw, 6.4rem); line-height: .98; letter-spacing: -.07em; }
-    h1 span { color: var(--accent); }
-    .lead { max-width: 650px; margin: 22px auto 30px; color: var(--muted); font-size: clamp(1.05rem, 2.4vw, 1.25rem); }
-    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; font-weight: 700; }
-    .button.primary { border-color: var(--accent); background: var(--accent); color: #11140d; }
-    .button.primary:hover { color: #11140d; filter: brightness(1.08); }
-    section { padding: 58px 0; }
-    .section-heading { max-width: 650px; margin-bottom: 28px; }
-    h2 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.04em; }
-    .section-heading p, .card p { color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--panel) 90%, transparent); }
-    .card .num { color: var(--accent); font-size: .82rem; font-weight: 800; letter-spacing: .12em; }
-    .card h3 { margin: 11px 0 6px; font-size: 1.15rem; }
-    .card p { margin: 0; }
-    .notice { padding: 22px 24px; border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; background: var(--panel); color: var(--muted); }
-    .notice strong { color: var(--text); }
-    .notice a { color: var(--accent); }
-    footer { margin-top: 40px; padding: 28px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
-    .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
-    @media (max-width: 700px) {
-      .hero { padding: 76px 0 58px; }
-      .grid { grid-template-columns: 1fr; }
-      .nav-links { gap: 12px; font-size: .84rem; }
-      .wrap { width: min(100% - 28px, 1080px); }
-    }
+    :root{color-scheme:dark;--bg:#08090c;--panel:#101218;--panel2:#141720;--text:#f7f8fb;--muted:#a2a8b5;--line:rgba(255,255,255,.11);--mint:#a7f5d0;--blue:#8eb8ff;--purple:#c7a6ff;--radius:22px;--max:1160px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}body:before{content:"";position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(8,9,12,.34),#08090c 68%),url('assets/blackbox-wallpaper.jpg') center 20%/cover no-repeat,radial-gradient(ellipse at 18% 0%,rgba(142,184,255,.23),transparent 42%),radial-gradient(ellipse at 86% 20%,rgba(167,245,208,.16),transparent 36%);opacity:.72}a{color:inherit}button{font:inherit}.container{width:min(var(--max),calc(100% - 44px));margin:auto}.topbar{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(255,255,255,.08);background:rgba(8,9,12,.78);backdrop-filter:blur(18px)}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:700 1rem 'Space Grotesk',sans-serif;letter-spacing:.13em}.brand img{width:37px;height:37px;object-fit:contain}.brand-mark{display:grid;place-items:center;width:37px;height:37px;border:1px solid rgba(255,255,255,.7);border-radius:11px;font:700 17px 'Space Grotesk',sans-serif}.navlinks{display:flex;align-items:center;gap:28px}.navlinks a{text-decoration:none;color:#c5c9d2;font-size:.9rem;transition:color .2s}.navlinks a:hover,.textlink:hover{color:var(--mint)}.navtools{display:flex;align-items:center;gap:10px}.language{padding:9px 10px;border:1px solid var(--line);border-radius:10px;background:#11131a;color:var(--text);font-weight:600}.menu-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:#11131a;color:white;font-size:1.2rem}.hero{position:relative;min-height:660px;display:grid;align-items:center;padding:80px 0 106px}.hero:after{content:"";position:absolute;inset:12% 0 4%;z-index:-1;border:1px solid rgba(255,255,255,.07);border-radius:38px;background:linear-gradient(115deg,rgba(9,11,16,.91),rgba(9,11,16,.55) 60%,rgba(9,11,16,.18));box-shadow:0 40px 130px rgba(0,0,0,.26)}.hero-content{max-width:760px;padding:clamp(34px,7vw,86px)}.badge{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid rgba(167,245,208,.25);border-radius:999px;background:rgba(167,245,208,.07);color:var(--mint);font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.pulse{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px var(--mint)}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:'Space Grotesk',sans-serif}h1{max-width:800px;margin:23px 0 20px;font-size:clamp(3.2rem,8vw,6.6rem);line-height:.98;letter-spacing:-.075em}h1 .gradient{background:linear-gradient(100deg,#fff 5%,#b4d7ff 47%,#a7f5d0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-copy{max-width:620px;color:#c0c5d0;font-size:clamp(1.05rem,2vw,1.22rem)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 22px}.button{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 19px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.045);font-weight:700;text-decoration:none;transition:transform .2s,border-color .2s,background .2s}.button:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.3)}.button.primary{border:0;background:linear-gradient(110deg,#b6f4d5,#c5e3ff);color:#10151a;box-shadow:0 8px 32px rgba(167,245,208,.14)}.button.primary:hover{color:#10151a;filter:brightness(1.06)}.hero-note{color:#858c9a;font-size:.82rem}.hero-note a{color:#d9dce4}.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:35px}.stat{padding:9px 13px;border:1px solid var(--line);border-radius:10px;background:rgba(5,6,9,.35);color:#b9bfca;font-size:.82rem}.stat strong{color:#fff}.section{padding:76px 0}.section-head{max-width:690px;margin-bottom:32px}.kicker{margin-bottom:10px;color:var(--mint);font-size:.76rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.section h2{margin-bottom:12px;font-size:clamp(2rem,4.7vw,3.35rem);line-height:1.08;letter-spacing:-.055em}.section-head>p{color:var(--muted);font-size:1.05rem}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{position:relative;overflow:hidden;padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(21,24,32,.92),rgba(13,15,20,.88));box-shadow:0 15px 50px rgba(0,0,0,.12)}.card:before{content:"";position:absolute;width:130px;height:130px;right:-75px;top:-75px;border-radius:50%;background:rgba(167,245,208,.09);filter:blur(12px)}.icon{display:grid;place-items:center;width:44px;height:44px;margin-bottom:20px;border:1px solid rgba(255,255,255,.12);border-radius:13px;background:rgba(255,255,255,.045);font-size:1.2rem}.card h3{margin-bottom:8px;font-size:1.18rem;letter-spacing:-.02em}.card p{margin-bottom:0;color:var(--muted);font-size:.94rem}.textlink{display:inline-flex;align-items:center;gap:6px;margin-top:18px;color:#e9edf4;text-decoration:none;font-size:.9rem;font-weight:700}.split{display:grid;grid-template-columns:.82fr 1.18fr;gap:54px;align-items:start}.steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:45px 1fr;gap:15px;padding:19px;border:1px solid var(--line);border-radius:16px;background:rgba(16,18,24,.82)}.step-num{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(167,245,208,.1);color:var(--mint);font:700 .87rem 'Space Grotesk',sans-serif}.step h3{margin:2px 0 4px;font-size:1rem}.step p{margin:0;color:var(--muted);font-size:.9rem}.callout{margin-top:20px;padding:19px 21px;border:1px solid rgba(142,184,255,.2);border-radius:15px;background:rgba(142,184,255,.065);color:#c3c9d5;font-size:.9rem}.callout strong{color:#fff}.media-card{display:flex;flex-direction:column;justify-content:space-between;min-height:100%;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:radial-gradient(ellipse at 95% 0%,rgba(199,166,255,.12),transparent 40%),linear-gradient(145deg,#171923,#0f1117)}.media-card h3{font-size:1.45rem}.media-card p{color:var(--muted)}.support-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.support-card{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(140deg,rgba(22,25,33,.95),rgba(12,14,19,.9))}.support-card h3{font-size:1.3rem}.support-card p{color:var(--muted)}.coin-note{padding:13px 15px;border-radius:12px;background:rgba(255,255,255,.045);color:#b7bdc8;font-size:.85rem}.socials{display:flex;flex-wrap:wrap;gap:11px}.social{display:inline-flex;align-items:center;gap:9px;min-height:45px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.035);text-decoration:none;font-size:.9rem;font-weight:600}.social:hover{border-color:rgba(167,245,208,.45);color:var(--mint)}.disclaimer{padding:22px 24px;border:1px solid rgba(255,194,120,.2);border-radius:16px;background:rgba(255,194,120,.055);color:#c2b9aa;font-size:.9rem}.disclaimer strong{color:#f3d9b8}.footer{padding:28px 0 40px;border-top:1px solid var(--line);color:#9299a7;font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer a{color:#d5d9e1;text-decoration:none}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}.reveal.visible{opacity:1;transform:none}:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+    @media(max-width:850px){.navlinks{gap:16px}.navlinks a{font-size:.83rem}.split{grid-template-columns:1fr;gap:25px}.hero{min-height:590px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:650px){.container{width:min(var(--max),calc(100% - 30px))}.nav{height:67px}.menu-toggle{display:block}.navtools{margin-left:auto}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;padding:16px 22px 20px;border-bottom:1px solid var(--line);background:rgba(8,9,12,.97);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px 4px;font-size:.98rem}.brand{font-size:.88rem}.brand img,.brand-mark{width:33px;height:33px}.hero{min-height:570px;padding:42px 0 66px}.hero:after{inset:6% 0 2%;border-radius:24px}.hero-content{padding:35px 24px}h1{font-size:clamp(3rem,15vw,5rem)}.hero-copy{font-size:1rem}.actions{align-items:stretch}.actions .button{width:100%}.section{padding:57px 0}.grid,.support-grid{grid-template-columns:1fr}.card,.support-card{padding:22px}.footer-inner{align-items:flex-start;flex-direction:column}.stats{gap:7px}.stat{font-size:.75rem}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
 <body>
-  <header>
-    <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="#top"><span class="mark" aria-hidden="true">B</span> BLACKBOX</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#getting-started">Getting started</a>
-        <a href="https://github.com/D3ATHLY/blackbox">GitHub</a>
+  <header class="topbar">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="BlackBox home">
+        <img src="assets/blackbox-logo.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="brand-mark" hidden aria-hidden="true">B</span><span>BLACKBOX</span>
+      </a>
+      <div class="navlinks" id="navlinks">
+        <a href="#about" data-i18n="navAbout">About</a><a href="#guide" data-i18n="navGuide">Getting started</a><a href="#support" data-i18n="navSupport">Community</a>
+      </div>
+      <div class="navtools">
+        <label class="sr-only" for="language" data-i18n="languageLabel">Choose language</label>
+        <select class="language" id="language" aria-label="Choose language"><option value="en">EN</option><option value="tr">TR</option><option value="es">ES</option></select>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
       </div>
     </nav>
   </header>
-
-  <main id="top">
-    <div class="wrap hero">
-      <div class="eyebrow">A homebrew project for PS5</div>
-      <h1>Your library.<br><span>Your way.</span></h1>
-      <p class="lead">BlackBox is a homebrew storefront and download manager developed for PS5 consoles. Find the official project information and releases here.</p>
-      <div class="actions">
-        <a class="button primary" href="https://github.com/D3ATHLY/blackbox/releases/latest">View latest release <span aria-hidden="true">&nbsp;↗</span></a>
-        <a class="button" href="https://github.com/D3ATHLY/blackbox">Explore source code</a>
-      </div>
-    </div>
-
-    <section id="about">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2>About BlackBox</h2>
-          <p>Project updates, source code, and release information are maintained in the official GitHub repository.</p>
+  <main id="home">
+    <section class="container hero">
+      <div class="hero-content">
+        <div class="badge"><span class="pulse"></span><span data-i18n="badge">A community-built PS5 project</span></div>
+        <h1><span data-i18n="heroLine1">Discover a new</span><br><span class="gradient" data-i18n="heroLine2">BlackBox experience.</span></h1>
+        <p class="hero-copy" data-i18n="heroCopy">A homebrew storefront and download manager for PS5. Explore the project, check official releases, and find clear information to help you get started.</p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/D3ATHLY/blackbox/releases/latest" target="_blank" rel="noopener"><span data-i18n="downloadCta">Explore latest release</span><span aria-hidden="true">↗</span></a>
+          <a class="button" href="https://github.com/D3ATHLY/blackbox" target="_blank" rel="noopener"><span data-i18n="sourceCta">View source on GitHub</span><span aria-hidden="true">⌘</span></a>
         </div>
+        <p class="hero-note" data-i18n="heroNote">Use only with content you are legally entitled to access. Read the official release notes before use.</p>
+        <div class="stats"><span class="stat"><strong>Open source</strong> · GPL-3.0+</span><span class="stat"><strong>Community</strong> · PS5 homebrew</span><span class="stat"><strong>Official</strong> · GitHub releases</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker" data-i18n="aboutKicker">The project</div><h2 data-i18n="aboutTitle">What is BlackBox?</h2><p data-i18n="aboutCopy">BlackBox is a community-developed homebrew storefront and download manager for PS5 consoles. This page brings together official project information, release links, and support resources.</p></div>
         <div class="grid">
-          <article class="card"><div class="num">01 / PROJECT</div><h3>Homebrew storefront</h3><p>A community-developed storefront and download manager for PS5 consoles.</p></article>
-          <article class="card"><div class="num">02 / RELEASES</div><h3>Official downloads</h3><p>Get release files and version-specific installation notes from the official release page.</p></article>
-          <article class="card"><div class="num">03 / OPEN SOURCE</div><h3>Built in the open</h3><p>Review the source, read project documentation, or report a technical issue on GitHub.</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true">◈</div><h3 data-i18n="feature1Title">A homebrew storefront</h3><p data-i18n="feature1Copy">Explore the application’s features and metadata through the project’s own interface. BlackBox is software—not a publisher or host of game content.</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true">↻</div><h3 data-i18n="feature2Title">Download management</h3><p data-i18n="feature2Copy">The project is designed to help manage downloads within the application. Availability and compatibility can change; consult the release notes for current details.</p></article>
+          <article class="card reveal"><div class="icon" aria-hidden="true">⌘</div><h3 data-i18n="feature3Title">Built in the open</h3><p data-i18n="feature3Copy">Review the source, read the documentation, follow development, or report a technical issue through the official GitHub repository.</p><a class="textlink" href="https://github.com/D3ATHLY/blackbox" target="_blank" rel="noopener"><span data-i18n="browseRepo">Browse repository</span> <span aria-hidden="true">→</span></a></article>
         </div>
       </div>
     </section>
 
-    <section id="getting-started">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2>Getting started</h2>
-          <p>Always follow the instructions provided with the current official release.</p>
+    <section class="section" id="guide">
+      <div class="container split">
+        <div class="section-head reveal"><div class="kicker" data-i18n="guideKicker">Start here</div><h2 data-i18n="guideTitle">A clear path to getting started.</h2><p data-i18n="guideCopy">Use the official project sources for current information. Release assets, requirements, and instructions may change between versions, so check the latest release before taking action.</p><a class="button primary" href="https://github.com/D3ATHLY/blackbox/releases/latest" target="_blank" rel="noopener"><span data-i18n="releaseButton">Open official releases</span> ↗</a></div>
+        <div class="steps">
+          <article class="step reveal"><div class="step-num">01</div><div><h3 data-i18n="step1Title">Check compatibility</h3><p data-i18n="step1Copy">Read the latest release notes and verify the stated requirements for your own setup before downloading anything.</p></div></article>
+          <article class="step reveal"><div class="step-num">02</div><div><h3 data-i18n="step2Title">Get the official release</h3><p data-i18n="step2Copy">Only use files published on the official BlackBox GitHub Releases page. Avoid third-party re-uploads and follow the release’s own guidance.</p></div></article>
+          <article class="step reveal"><div class="step-num">03</div><div><h3 data-i18n="step3Title">Follow release documentation</h3><p data-i18n="step3Copy">Use the version-specific instructions included by the project. If anything is unclear, stop and ask through the official Issues page.</p></div></article>
+          <article class="step reveal"><div class="step-num">04</div><div><h3 data-i18n="step4Title">Use responsibly</h3><p data-i18n="step4Copy">Use only content you are legally entitled to access and respect applicable laws, platform terms, and third-party rights.</p></div></article>
         </div>
-        <div class="grid">
-          <article class="card"><div class="num">STEP 01</div><h3>Read the release notes</h3><p>Check the latest release for current files, compatibility details, and installation guidance.</p></article>
-          <article class="card"><div class="num">STEP 02</div><h3>Review the documentation</h3><p>Consult the repository README and any release-specific notes before proceeding.</p></article>
-          <article class="card"><div class="num">STEP 03</div><h3>Need help?</h3><p>Use the project’s GitHub Issues page for technical questions or bug reports.</p></article>
+      </div>
+      <div class="container"><div class="callout reveal"><strong data-i18n="videoLabel">Video:</strong> <span data-i18n="videoCopy">The project README links to a community video. Check its description and the latest release notes for current information.</span> <a class="textlink" href="https://www.youtube.com/watch?v=tFAzQugrDfo" target="_blank" rel="noopener" data-i18n="watchVideo">Watch on YouTube ↗</a></div></div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <div class="section-head reveal"><div class="kicker" data-i18n="communityKicker">Connect & support</div><h2 data-i18n="communityTitle">Follow the project. Support the people behind it.</h2><p data-i18n="communityCopy">Official links below point to the repository, releases, issue tracker, the project’s linked video, and the creator’s listed donation page.</p></div>
+        <div class="support-grid">
+          <article class="support-card reveal"><div class="icon" aria-hidden="true">◎</div><h3 data-i18n="socialTitle">Official links</h3><p data-i18n="socialCopy">Stay close to project updates and get help from the right place.</p><div class="socials"><a class="social" href="https://github.com/D3ATHLY/blackbox" target="_blank" rel="noopener">⌘ <span>GitHub</span></a><a class="social" href="https://github.com/D3ATHLY/blackbox/releases" target="_blank" rel="noopener">↓ <span data-i18n="releasesLink">Releases</span></a><a class="social" href="https://github.com/D3ATHLY/blackbox/issues" target="_blank" rel="noopener">◌ <span data-i18n="issuesLink">Issues & support</span></a><a class="social" href="https://www.youtube.com/watch?v=tFAzQugrDfo" target="_blank" rel="noopener">▶ <span>YouTube</span></a></div></article>
+          <article class="support-card reveal"><div class="icon" aria-hidden="true">♡</div><h3 data-i18n="donateTitle">Support development</h3><p data-i18n="donateCopy">If you find the project useful, you can optionally support its creator through the donation link listed in the repository README. Donations are voluntary and do not provide special access or guarantees.</p><a class="button primary" href="https://www.buymeacoffee.com/BlackBoxPS" target="_blank" rel="noopener"><span data-i18n="donateButton">Buy the creator a coffee</span> ↗</a><p class="coin-note" style="margin-top:16px" data-i18n="coinNote">Crypto: no verified wallet address is published here. Never send coins to an address from unofficial comments or messages; only use an address confirmed by the project owner through an official channel.</p></article>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap notice"><strong>Important:</strong> BlackBox does not host game files or copyrighted content. Use the project only with content you are legally entitled to access, and comply with applicable laws and service terms. Software is provided as is; use it at your own risk. See the <a href="https://github.com/D3ATHLY/blackbox#disclaimer-and-terms-of-use">full disclaimer</a>.</div>
-    </section>
+    <section class="section" id="notice"><div class="container"><div class="disclaimer reveal"><strong data-i18n="disclaimerTitle">Please use responsibly.</strong> <span data-i18n="disclaimerCopy">BlackBox does not host game files or copyrighted content. Metadata may reference third-party sources; the project does not guarantee their availability, legality, security, or compliance. Use the software at your own risk, respect applicable laws and service terms, and access only content for which you have the legal rights. The software is provided “as is”.</span> <a href="https://github.com/D3ATHLY/blackbox#disclaimer-and-terms-of-use" data-i18n="fullDisclaimer">Read the full disclaimer →</a></div></div></section>
   </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© <span id="year">2026</span> BlackBox contributors</span>
-      <span><a href="https://github.com/D3ATHLY/blackbox">GitHub</a> · <a href="https://github.com/D3ATHLY/blackbox/issues">Issues</a> · GPL-3.0-or-later</span>
-    </div>
-  </footer>
+  <footer class="footer"><div class="container footer-inner"><span>© <span id="year"></span> BlackBox contributors · GPL-3.0-or-later</span><div class="footer-links"><a href="https://github.com/D3ATHLY/blackbox">GitHub</a><a href="https://github.com/D3ATHLY/blackbox/releases">Releases</a><a href="https://github.com/D3ATHLY/blackbox/issues">Support</a><a href="#home" data-i18n="backTop">Back to top ↑</a></div></div></footer>
+  <script>
+    const translations={
+      en:{navAbout:'About',navGuide:'Getting started',navSupport:'Community',languageLabel:'Choose language',badge:'A community-built PS5 project',heroLine1:'Discover a new',heroLine2:'BlackBox experience.',heroCopy:'A homebrew storefront and download manager for PS5. Explore the project, check official releases, and find clear information to help you get started.',downloadCta:'Explore latest release',sourceCta:'View source on GitHub',heroNote:'Use only with content you are legally entitled to access. Read the official release notes before use.',aboutKicker:'The project',aboutTitle:'What is BlackBox?',aboutCopy:'BlackBox is a community-developed homebrew storefront and download manager for PS5 consoles. This page brings together official project information, release links, and support resources.',feature1Title:'A homebrew storefront',feature1Copy:'Explore the application’s features and metadata through the project’s own interface. BlackBox is software—not a publisher or host of game content.',feature2Title:'Download management',feature2Copy:'The project is designed to help manage downloads within the application. Availability and compatibility can change; consult the release notes for current details.',feature3Title:'Built in the open',feature3Copy:'Review the source, read the documentation, follow development, or report a technical issue through the official GitHub repository.',browseRepo:'Browse repository',guideKicker:'Start here',guideTitle:'A clear path to getting started.',guideCopy:'Use the official project sources for current information. Release assets, requirements, and instructions may change between versions, so check the latest release before taking action.',releaseButton:'Open official releases',step1Title:'Check compatibility',step1Copy:'Read the latest release notes and verify the stated requirements for your own setup before downloading anything.',step2Title:'Get the official release',step2Copy:'Only use files published on the official BlackBox GitHub Releases page. Avoid third-party re-uploads and follow the release’s own guidance.',step3Title:'Follow release documentation',step3Copy:'Use the version-specific instructions included by the project. If anything is unclear, stop and ask through the official Issues page.',step4Title:'Use responsibly',step4Copy:'Use only content you are legally entitled to access and respect applicable laws, platform terms, and third-party rights.',videoLabel:'Video:',videoCopy:'The project README links to a community video. Check its description and the latest release notes for current information.',watchVideo:'Watch on YouTube ↗',communityKicker:'Connect & support',communityTitle:'Follow the project. Support the people behind it.',communityCopy:'Official links below point to the repository, releases, issue tracker, the project’s linked video, and the creator’s listed donation page.',socialTitle:'Official links',socialCopy:'Stay close to project updates and get help from the right place.',releasesLink:'Releases',issuesLink:'Issues & support',donateTitle:'Support development',donateCopy:'If you find the project useful, you can optionally support its creator through the donation link listed in the repository README. Donations are voluntary and do not provide special access or guarantees.',donateButton:'Buy the creator a coffee',coinNote:'Crypto: no verified wallet address is published here. Never send coins to an address from unofficial comments or messages; only use an address confirmed by the project owner through an official channel.',disclaimerTitle:'Please use responsibly.',disclaimerCopy:'BlackBox does not host game files or copyrighted content. Metadata may reference third-party sources; the project does not guarantee their availability, legality, security, or compliance. Use the software at your own risk, respect applicable laws and service terms, and access only content for which you have the legal rights. The software is provided “as is”.',fullDisclaimer:'Read the full disclaimer →',backTop:'Back to top ↑'},
+      tr:{navAbout:'Hakkında',navGuide:'Başlangıç',navSupport:'Topluluk',languageLabel:'Dil seçin',badge:'Topluluk tarafından geliştirilen PS5 projesi',heroLine1:'Yeni bir',heroLine2:'BlackBox deneyimini keşfet.',heroCopy:'PS5 için bir homebrew mağaza arayüzü ve indirme yöneticisi. Projeyi keşfedin, resmî sürümlere göz atın ve başlangıç için gerekli bilgilere ulaşın.',downloadCta:'Son sürümü incele',sourceCta:'GitHub’da kaynak kodu',heroNote:'Yalnızca yasal erişim hakkınız olan içeriklerle kullanın. Kullanmadan önce resmî sürüm notlarını okuyun.',aboutKicker:'Proje',aboutTitle:'BlackBox nedir?',aboutCopy:'BlackBox, PS5 konsolları için topluluk tarafından geliştirilen bir homebrew mağaza arayüzü ve indirme yöneticisidir. Bu sayfada resmî proje bilgileri, sürüm bağlantıları ve destek kaynakları bir arada sunulur.',feature1Title:'Homebrew mağaza arayüzü',feature1Copy:'Uygulamanın özelliklerini ve metadata bilgilerini projenin kendi arayüzünden keşfedin. BlackBox bir yazılımdır; oyun içeriği yayımlamaz veya barındırmaz.',feature2Title:'İndirme yönetimi',feature2Copy:'Proje, uygulama içindeki indirmeleri yönetmeye yardımcı olmak üzere tasarlanmıştır. Kullanılabilirlik ve uyumluluk değişebilir; güncel bilgiler için sürüm notlarını inceleyin.',feature3Title:'Açık geliştirme',feature3Copy:'Kaynak kodunu inceleyin, belgeleri okuyun, geliştirmeyi takip edin veya teknik sorunları resmî GitHub deposunda bildirin.',browseRepo:'Depoyu incele',guideKicker:'Buradan başlayın',guideTitle:'Başlangıç için net bir yol.',guideCopy:'Güncel bilgiler için projenin resmî kaynaklarını kullanın. Sürüm dosyaları, gereksinimler ve yönergeler değişebileceğinden işlem yapmadan önce son sürümü kontrol edin.',releaseButton:'Resmî sürümleri aç',step1Title:'Uyumluluğu kontrol edin',step1Copy:'Herhangi bir dosya indirmeden önce son sürüm notlarını okuyun ve belirtilen gereksinimlerin kurulumunuza uygun olduğundan emin olun.',step2Title:'Resmî sürümü edinin',step2Copy:'Yalnızca BlackBox’ın resmî GitHub Releases sayfasında yayımlanan dosyaları kullanın. Üçüncü taraf kopyalarından kaçının ve sürüm yönergelerini izleyin.',step3Title:'Sürüm belgelerini izleyin',step3Copy:'Projenin ilgili sürüm için sağladığı yönergeleri kullanın. Bir nokta belirsizse durun ve resmî Issues sayfasından yardım isteyin.',step4Title:'Sorumlu kullanın',step4Copy:'Yalnızca yasal erişim hakkınız olan içerikleri kullanın; yürürlükteki yasalara, platform koşullarına ve üçüncü taraf haklarına uyun.',videoLabel:'Video:',videoCopy:'Proje README dosyasında topluluk tarafından hazırlanmış bir video bağlantısı bulunur. Güncel bilgiler için açıklamayı ve son sürüm notlarını kontrol edin.',watchVideo:'YouTube’da izle ↗',communityKicker:'Bağlantı ve destek',communityTitle:'Projeyi takip edin, geliştiricilere destek olun.',communityCopy:'Aşağıdaki resmî bağlantılar depo, sürümler, sorun bildirimi, projeyle bağlantılı video ve geliştiricinin paylaştığı bağış sayfasına yönlendirir.',socialTitle:'Resmî bağlantılar',socialCopy:'Proje güncellemelerini takip edin ve doğru kanaldan destek alın.',releasesLink:'Sürümler',issuesLink:'Sorunlar ve destek',donateTitle:'Geliştirmeye destek olun',donateCopy:'Projeyi faydalı buluyorsanız README dosyasında listelenen bağış bağlantısı üzerinden geliştiriciye isteğe bağlı destek verebilirsiniz. Bağışlar gönüllüdür; özel erişim veya garanti sağlamaz.',donateButton:'Geliştiriciye kahve ısmarla',coinNote:'Kripto: burada doğrulanmış bir cüzdan adresi yayımlanmamıştır. Resmî olmayan yorum veya mesajlardaki adreslere coin göndermeyin; yalnızca proje sahibinin resmî kanaldan doğruladığı adresi kullanın.',disclaimerTitle:'Lütfen sorumlu kullanın.',disclaimerCopy:'BlackBox oyun dosyalarını veya telifli içerikleri barındırmaz. Metadata üçüncü taraf kaynaklara işaret edebilir; proje bu kaynakların erişilebilirliğini, yasallığını, güvenliğini veya uyumluluğunu garanti etmez. Yazılımı kendi sorumluluğunuzda kullanın; yasalara ve hizmet koşullarına uyun ve yalnızca yasal hakkınız olan içeriğe erişin. Yazılım “olduğu gibi” sunulur.',fullDisclaimer:'Yasal uyarının tamamını okuyun →',backTop:'Başa dön ↑'},
+      es:{navAbout:'Acerca de',navGuide:'Cómo empezar',navSupport:'Comunidad',languageLabel:'Elegir idioma',badge:'Proyecto de PS5 creado por la comunidad',heroLine1:'Descubre una nueva',heroLine2:'experiencia BlackBox.',heroCopy:'Una interfaz homebrew y gestor de descargas para PS5. Explora el proyecto, consulta las versiones oficiales y encuentra información clara para empezar.',downloadCta:'Ver última versión',sourceCta:'Ver código en GitHub',heroNote:'Úsalo solo con contenido al que tengas derecho legal de acceso. Lee las notas oficiales de la versión antes de usarlo.',aboutKicker:'El proyecto',aboutTitle:'¿Qué es BlackBox?',aboutCopy:'BlackBox es una interfaz homebrew y gestor de descargas para consolas PS5 desarrollado por la comunidad. Esta página reúne información oficial, enlaces a versiones y recursos de ayuda.',feature1Title:'Interfaz homebrew',feature1Copy:'Explora las funciones y los metadatos de la aplicación mediante la propia interfaz del proyecto. BlackBox es software; no publica ni aloja contenido de juegos.',feature2Title:'Gestión de descargas',feature2Copy:'El proyecto está diseñado para ayudar a gestionar descargas desde la aplicación. La disponibilidad y compatibilidad pueden cambiar; consulta las notas de la versión.',feature3Title:'Desarrollo abierto',feature3Copy:'Revisa el código fuente, lee la documentación, sigue el desarrollo o informa de problemas técnicos en el repositorio oficial de GitHub.',browseRepo:'Ver repositorio',guideKicker:'Empieza aquí',guideTitle:'Un camino claro para empezar.',guideCopy:'Consulta las fuentes oficiales del proyecto. Los archivos, requisitos e instrucciones pueden cambiar entre versiones; revisa la última antes de actuar.',releaseButton:'Abrir versiones oficiales',step1Title:'Comprueba la compatibilidad',step1Copy:'Lee las notas de la última versión y verifica los requisitos indicados para tu configuración antes de descargar archivos.',step2Title:'Obtén la versión oficial',step2Copy:'Usa únicamente archivos publicados en GitHub Releases oficial de BlackBox. Evita copias de terceros y sigue las indicaciones de la versión.',step3Title:'Sigue la documentación',step3Copy:'Utiliza las instrucciones específicas de la versión. Si algo no está claro, detente y pregunta en la página oficial de Issues.',step4Title:'Úsalo responsablemente',step4Copy:'Accede solo a contenido que tengas derecho legal a utilizar y respeta las leyes, condiciones de la plataforma y derechos de terceros.',videoLabel:'Vídeo:',videoCopy:'El README del proyecto enlaza a un vídeo de la comunidad. Consulta su descripción y las notas de la última versión.',watchVideo:'Ver en YouTube ↗',communityKicker:'Conecta y apoya',communityTitle:'Sigue el proyecto. Apoya a sus creadores.',communityCopy:'Los enlaces oficiales llevan al repositorio, versiones, incidencias, vídeo vinculado al proyecto y página de donaciones indicada por el creador.',socialTitle:'Enlaces oficiales',socialCopy:'Sigue las novedades y solicita ayuda en el canal adecuado.',releasesLink:'Versiones',issuesLink:'Incidencias y ayuda',donateTitle:'Apoya el desarrollo',donateCopy:'Si te resulta útil el proyecto, puedes apoyar voluntariamente a su creador mediante el enlace de donación del README. Las donaciones no ofrecen acceso especial ni garantías.',donateButton:'Invitar a un café al creador',coinNote:'Cripto: aquí no se publica ninguna dirección de monedero verificada. No envíes monedas a direcciones de comentarios o mensajes no oficiales; utiliza solo una dirección confirmada por el propietario del proyecto en un canal oficial.',disclaimerTitle:'Úsalo responsablemente.',disclaimerCopy:'BlackBox no aloja archivos de juegos ni contenido protegido por derechos de autor. Los metadatos pueden mencionar fuentes de terceros; el proyecto no garantiza su disponibilidad, legalidad, seguridad o cumplimiento. Usa el software bajo tu responsabilidad, respeta las leyes y condiciones aplicables y accede solo al contenido que tengas derecho a utilizar. El software se ofrece “tal cual”.',fullDisclaimer:'Leer el aviso legal completo →',backTop:'Volver arriba ↑'}
+    };
+    const select=document.getElementById('language');
+    function setLanguage(lang){const dict=translations[lang]||translations.en;document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(dict[key])el.textContent=dict[key]});select.value=lang;try{localStorage.setItem('blackbox-language',lang)}catch(e){}}
+    let initial='en';try{const saved=localStorage.getItem('blackbox-language');if(saved&&translations[saved])initial=saved;else if(navigator.language.toLowerCase().startsWith('tr'))initial='tr';else if(navigator.language.toLowerCase().startsWith('es'))initial='es'}catch(e){}setLanguage(initial);select.addEventListener('change',e=>setLanguage(e.target.value));
+    const toggle=document.getElementById('menuToggle'),links=document.getElementById('navlinks');toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu')});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+    document.getElementById('year').textContent=new Date().getFullYear();const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  </script>
 </body>
 </html>
