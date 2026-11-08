@@ -1,19 +1,19 @@
 {
   "messages": [
     {
-      "id": "20261019-v1120-announce",
-      "ts": 1792437126,
+      "id": "20261109-blackbox-2-0-0",
+      "ts": 1794268800,
       "texts": {
-        "tr": "BlackBox 1.12.0 yayınlandı! Torrent indirmeleri (magnet ve .torrent), 1900'den fazla oyun, gözat sayfasında sıralama düzeltmeleri ve 10 dile çeviriler.",
-        "en": "BlackBox 1.12.0 is out! Torrent downloads (magnet and .torrent), over 1900 games, browse sort fixes and 10-language translations.",
-        "de": "BlackBox 1.12.0 ist da! Torrent-Downloads (Magnet und .torrent), über 1900 Spiele, Stöbern-Fixes und Übersetzungen in 10 Sprachen.",
-        "fr": "BlackBox 1.12.0 est là ! Téléchargements torrent (magnet et .torrent), plus de 1900 jeux, corrections du tri et traductions en 10 langues.",
-        "es": "¡BlackBox 1.12.0 ya está! Descargas torrent (magnet y .torrent), más de 1900 juegos, correcciones de orden y traducciones a 10 idiomas.",
-        "ru": "Вышел BlackBox 1.12.0! Загрузки торрентов (magnet и .torrent), более 1900 игр, исправления сортировки и перевод на 10 языков.",
-        "ar": "صدر BlackBox 1.12.0! تنزيلات التورنت (magnet و .torrent)، أكثر من 1900 لعبة، إصلاحات الترتيب وترجمات بعشر لغات.",
-        "hu": "Megjelent a BlackBox 1.12.0! Torrent letöltések (magnet és .torrent), több mint 1900 játék, rendezési javítások és fordítások 10 nyelven.",
-        "it": "BlackBox 1.12.0 è arrivato! Download torrent (magnet e .torrent), oltre 1900 giochi, correzioni di ordinamento e traduzioni in 10 lingue.",
-        "pt": "BlackBox 1.12.0 saiu! Downloads torrent (magnet e .torrent), mais de 1900 jogos, correções de ordenação e traduções em 10 línguas."
+        "tr": "BlackBox 2.0.0 yayınlandı — tamamen yeni sürüm. Bu sürümü kullananlar için güncelleme yolu artık farklı: BlackBox 2 için github.com/D3ATHLY/blackbox sayfasındaki 2.0.0 paketini indirip kurmanız gerekiyor. Eski 1.12.6 sürümü artık güncellenmiyor.",
+        "en": "BlackBox 2.0.0 is out — a completely new version. The update path has changed for everyone on this version: to move to BlackBox 2, download and install the 2.0.0 package from github.com/D3ATHLY/blackbox. The old 1.12.6 release is no longer updated.",
+        "de": "BlackBox 2.0.0 ist da — eine völlig neue Version. Der Update-Weg hat sich für alle auf dieser Version geändert: Um auf BlackBox 2 umzusteigen, lade das Paket 2.0.0 von github.com/D3ATHLY/blackbox herunter und installiere es. Die alte Version 1.12.6 wird nicht mehr aktualisiert.",
+        "fr": "BlackBox 2.0.0 est disponible — une version entièrement nouvelle. Le chemin de mise à jour a changé pour tous ceux qui utilisent cette version : pour passer à BlackBox 2, téléchargez et installez le paquet 2.0.0 depuis github.com/D3ATHLY/blackbox. L'ancienne version 1.12.6 n'est plus mise à jour.",
+        "es": "BlackBox 2.0.0 ya está disponible: una versión completamente nueva. La ruta de actualización ha cambiado para todos los que usan esta versión: para pasar a BlackBox 2, descarga e instala el paquete 2.0.0 desde github.com/D3ATHLY/blackbox. La versión anterior 1.12.6 ya no se actualiza.",
+        "ru": "Вышел BlackBox 2.0.0 — полностью новая версия. Путь обновления изменился для всех, кто пользуется этой версией: чтобы перейти на BlackBox 2, скачайте и установите пакет 2.0.0 с github.com/D3ATHLY/blackbox. Старая версия 1.12.6 больше не обновляется.",
+        "ar": "صدر BlackBox 2.0.0 — إصدار جديد تمامًا. تغيّر مسار التحديث لكل من يستخدم هذا الإصدار: للانتقال إلى BlackBox 2، نزّل حزمة 2.0.0 من github.com/D3ATHLY/blackbox وثبّتها. الإصدار القديم 1.12.6 لم يعد يُحدَّث.",
+        "hu": "Megjelent a BlackBox 2.0.0 — egy teljesen új verzió. A frissítés menete megváltozott mindenkinél, aki ezt a verziót használja: a BlackBox 2-re való áttéréshez töltsd le és telepítsd a 2.0.0 csomagot a github.com/D3ATHLY/blackbox oldalról. A régi 1.12.6 verzió már nem kap frissítést.",
+        "it": "BlackBox 2.0.0 è disponibile: una versione completamente nuova. Il percorso di aggiornamento è cambiato per chi usa questa versione: per passare a BlackBox 2, scarica e installa il pacchetto 2.0.0 da github.com/D3ATHLY/blackbox. La vecchia versione 1.12.6 non viene più aggiornata.",
+        "pt": "BlackBox 2.0.0 foi lançado — uma versão totalmente nova. O caminho de atualização mudou para quem usa esta versão: para mudar para o BlackBox 2, baixe e instale o pacote 2.0.0 em github.com/D3ATHLY/blackbox. A versão antiga 1.12.6 não recebe mais atualizações."
       }
     }
   ]
