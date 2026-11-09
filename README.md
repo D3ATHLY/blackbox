@@ -27,14 +27,14 @@ BlackBox is a homebrew storefront and download manager developed for PS5 console
 
 ### 🎮 Step-by-Step Installation
 
-* **Delete the Old File:** Manually delete the old **PPSA01453.ffpkg** file located inside the `/data/homebrew` directory.
+* **Delete the Old File:** Manually delete the old **PPSA11453.ffpkg** file located inside the `/data/homebrew` directory.
 * **Uninstall Old Version:** Completely delete/uninstall the **older version of BlackBox** from your console.
 * **Download the Latest Version:** Get the updated file from the official [BlackBox Latest Release Page] https://github.com/D3ATHLY/blackbox/releases/latest
-* **Transfer the New File:** Copy the newly downloaded **PPSA01453.ffpkg** file into the `/data/homebrew` folder.
-* **Trigger the Installation:** Use **shadowmount** to trigger and install the newly placed `.ffpkg` file.
+* **Transfer the New File:** Copy the newly downloaded **PPSA11453.ffpkg** file into the `/data/homebrew` folder.
+* **Trigger the Installation:** Use **shadowmount** to trigger and install the newly placed `.exfat` file.
 * **Reboot if Needed:** If you still encounter warnings or errors, restart your console and try again.
 
-> ⚠️ **CRITICAL WARNING:** **NEVER use Payload Manager** during this process! The `blackbox.elf` file is embedded inside `PPSA01453.ffpkg` and updates automatically. Do NOT load `blackbox.elf` manually via payload manager.
+> ⚠️ **CRITICAL WARNING:** **NEVER use Payload Manager** during this process! The `blackbox.elf` file is embedded inside `PPSA11453.ffpkg` and updates automatically. Do NOT load `blackbox.elf` manually via payload manager.
 
 ---
 
@@ -58,7 +58,7 @@ BlackBox is a homebrew storefront and download manager developed for PS5 console
 | `updates/payloads.json` | Application's own update information (version, SHA-256) | Developer |
 | `updates/tv-app.json` | TV application update information | Developer |
 | `catalog/` directory | Game metadata (title, cover, format, size) | Compiled from third-party sources |
-| Release assets | `blackbox.elf`, `PPSA01453.ffpkg` (own compilation) | Developer |
+| Release assets | `blackbox.elf`, `PPSA11453.ffpkg` (own compilation) | Developer |
 
 * **Note:** Users should not download and directly use any files from this repository; the application operates via its own update mechanism. 
 * Game files (FFPFSC, PKG, etc.) are never published or hosted in this repository.
