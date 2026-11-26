@@ -1,0 +1,24 @@
+{
+ "titleId": "PPSA38500",
+ "title": "Grand Theft Auto VI",
+ "bytes": 216513692961,
+ "generated": "2026-11-26T23:49:46Z",
+ "links": [
+  {
+   "provider": "mocha",
+   "url": "https://stor3.mochaprox.li/hXCVycKcF9rYLxEBAQ3je/%5BTelegram%20PlayStation%20Pulse%5D%20Grand%20Theft%20Auto%20VI%20PPSA38500%20v01.002.001.pkg?token=01cMDu3VK70zwckKk0pCvK5M5EOX175qEegNQtUOV2U&expires=1795820650",
+   "bytes": 216513692961,
+   "expires": 1795820650,
+   "ok": true,
+   "checked_at": 1795736970.7625265
+  },
+  {
+   "provider": "viking",
+   "url": "https://gleaming-lehr.s3.sbg.io.cloud.ovh.net/XcQweRAd4O?response-content-disposition=attachment%3B%20filename%3D%22Grand%20Theft%20Auto%20VI%20%5BPPSA38500%5D%20%5Bv01.002%5D.pkg%22&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=12d9e8c00a5148b180664101e49eca30%2F20261126%2Fsbg%2Fs3%2Faws4_request&X-Amz-Date=20261126T231114Z&X-Amz-SignedHeaders=host&X-Amz-Expires=172800&X-Amz-Signature=a31d5412d3ce5be6052f46a5212278104f7406a23acf034919dc929a83feb63b",
+   "bytes": 221028009318,
+   "expires": 1795914494,
+   "ok": true,
+   "checked_at": 1795736986.3478723
+  }
+ ]
+}

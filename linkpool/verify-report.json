@@ -1,0 +1,36 @@
+{
+ "PPSA38500": {
+  "title": "Grand Theft Auto VI",
+  "titleId": "PPSA38500",
+  "links": [
+   {
+    "provider": "mocha",
+    "ok": true,
+    "http": 206,
+    "bytes": 216513692961,
+    "pkg_magic": true,
+    "size_ok": true,
+    "server": "cloudflare",
+    "filename": "attachment; filename=\"[Telegram PlayStation Pulse] Grand Theft Auto VI PPSA38500 v01.002.001.pkg\"; filename*=UTF-8''%5BTelegram%20PlayStation%20Pulse%5D%20Grand",
+    "ms": 984,
+    "checked_at": 1795736970.7625265,
+    "unknown_provider": false
+   },
+   {
+    "provider": "viking",
+    "ok": true,
+    "http": 206,
+    "bytes": 221028009318,
+    "pkg_magic": true,
+    "size_ok": true,
+    "server": null,
+    "filename": "attachment; filename=\"Grand Theft Auto VI [PPSA38500] [v01.002].pkg\"",
+    "ms": 15585,
+    "checked_at": 1795736986.3478723,
+    "unknown_provider": false
+   }
+  ],
+  "ok_count": 2,
+  "fail_count": 0
+ }
+}
