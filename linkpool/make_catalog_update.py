@@ -37,19 +37,20 @@ def load(path, fallback=None):
 
 
 def release_of(tid: str, entry: dict, meta: dict) -> dict:
+    browser = bool(entry.get("requiresBrowser"))
     return {
         "id": "pool-" + tid.lower() + "-" + str(entry["provider"]),
         "format": "pkg",
         "filename": meta.get("filename") or (tid + ".pkg"),
         "url": entry["url"],
         "browserUrl": entry["url"],
-        "requiresBrowser": False,
+        "requiresBrowser": browser,
         "sizeBytes": entry.get("verified_bytes"),
         "version": meta.get("version") or "",
         "category": "game",
         "provider": entry["provider"],
         "source": "pool",
-        "flow": "direct",
+        "flow": "browser" if browser else "direct",
         "label": entry["provider"],
         "role": "base",
         "expires": entry.get("expires"),
