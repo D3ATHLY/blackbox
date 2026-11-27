@@ -37,42 +37,70 @@ jobs:
       - name: 3) catalog-update.json uret
         run: python linkpool/make_catalog_update.py
 
-      - name: 3b) Uretilen dosyayi guvene al (checkout ezmesin)
-        run: cp linkpool/public/catalog-update.json "$RUNNER_TEMP/catalog-update.json"
-
-      - name: 4) main'e commit (rebase ile)
+      - name: 3b) Uretilen dosyalari guvene al
         run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          cp linkpool/verify-report.json "$RUNNER_TEMP/out/"
+          rm -rf "$RUNNER_TEMP/out/public"
+          cp -r linkpool/public "$RUNNER_TEMP/out/public"
+          cp linkpool/public/catalog-update.json "$RUNNER_TEMP/catalog-update.json"
+
+      # Uretilen dosyalar her seferinde bastan yazildigi icin rebase/merge
+      # catismasi olmaz: en son origin/main uzerine kopyalanip commit edilir.
+      - name: 4) main'e yaz (catismasiz, 3 deneme)
+        run: |
+          set -e
           git config user.name "linkpool-bot"
           git config user.email "linkpool@users.noreply.github.com"
-          git add -A linkpool/verify-report.json linkpool/public
-          git diff --cached --quiet || git commit -m "linkpool: hourly verify"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp "$RUNNER_TEMP/out/verify-report.json" linkpool/verify-report.json
+            rm -rf linkpool/public
+            cp -r "$RUNNER_TEMP/out/public" linkpool/public
+            git add -A linkpool/verify-report.json linkpool/public
+            if git diff --cached --quiet; then
+              echo "degisiklik yok"
+              break
+            fi
+            git commit -m "linkpool: hourly verify"
+            if git push origin HEAD:main; then
+              echo "main guncellendi"
+              break
+            fi
+            echo "push yarisi, tekrar deneniyor ($attempt)"
+            sleep 5
+          done
 
-      - name: 5) catalog dalina yaz
+      - name: 5) catalog dalina yaz (catismasiz, 3 deneme)
         run: |
           set -e
           git config user.name "linkpool-bot"
           git config user.email "linkpool@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin catalog >/dev/null 2>&1; then
-            echo "catalog dali var, uzerine yazilacak"
-            git fetch origin catalog
-            git checkout -B catalog origin/catalog
+            BASE_REF=catalog
           else
-            echo "catalog dali yok, main'den olusturulacak"
-            git fetch origin main
-            git checkout -B catalog origin/main
+            BASE_REF=main
           fi
-          # checkout, linkpool/public icindeki dosyayi ESKI haline dondurur:
-          # bu yuzden 3b adiminda alinan taze kopyayi kullaniyoruz.
-          cp "$RUNNER_TEMP/catalog-update.json" ./catalog-update.json
-          git add catalog-update.json
-          if git diff --cached --quiet; then
-            echo "degisiklik yok, yazilmadi"
-          else
+          for attempt in 1 2 3; do
+            git fetch origin "$BASE_REF"
+            git reset --hard "origin/$BASE_REF"
+            # reset, linkpool/public icindeki dosyayi eski haline dondurur:
+            # bu yuzden 3b adiminda alinan taze kopya kullanilir.
+            cp "$RUNNER_TEMP/catalog-update.json" ./catalog-update.json
+            git add catalog-update.json
+            if git diff --cached --quiet; then
+              echo "degisiklik yok, yazilmadi"
+              break
+            fi
             git commit -m "catalog: hourly link refresh ($(date -u +%Y-%m-%dT%H:%MZ))"
-            git push origin HEAD:catalog
-          fi
+            if git push origin HEAD:catalog; then
+              echo "catalog guncellendi"
+              break
+            fi
+            echo "push yarisi, tekrar deneniyor ($attempt)"
+            sleep 5
+          done
 
       - name: 6) Suresi yaklasan linkleri bildir
         if: always()
