@@ -82,9 +82,16 @@ def build() -> dict:
         rows = [release_of(tid, e, meta) for e in meta.get("links", [])
                 if e.get("provider") in ok]
         # gomulu (imajdaki) kaynaklar: her zaman yedek olarak eklensin
+        live_keys = {str(e.get("provider") or "").lower() for e in meta.get("links", [])
+                     if e.get("provider") in ok}
         for row in load(os.path.join(BASE, name), []) or []:
-            if isinstance(row, dict) and row.get("url"):
-                rows.append(dict(row))
+            if not isinstance(row, dict) or not row.get("url"):
+                continue
+            base_key = str(row.get("provider") or "").lower()
+            # ayni saglayicinin havuzdaki dogrudan linki varken sayfayi tekrar gosterme
+            if any(k and (base_key.startswith(k) or k.startswith(base_key)) for k in live_keys):
+                continue
+            rows.append(dict(row))
         # ayni URL iki kez gitmesin
         seen = set()
         uniq = []
