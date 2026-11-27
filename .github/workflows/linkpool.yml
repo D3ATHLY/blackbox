@@ -1,10 +1,19 @@
 name: linkpool
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "17 * * * *"      # saatlik dogrulama + yayin
   workflow_dispatch: {}
+  push:
+    paths:
+      - "linkpool/links/**"
+      - "linkpool/base/**"
+      - "linkpool/linkpool.py"
+      - "linkpool/publish.py"
+      - "linkpool/make_catalog_update.py"
+      - "linkpool/check_expiry.py"
 permissions:
   contents: write
+  issues: write
 concurrency:
   group: linkpool
   cancel-in-progress: false
@@ -18,12 +27,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: 1) Linkleri dogrula
         run: python linkpool/linkpool.py verify
+
       - name: 2) Yayin JSON'u uret
         run: python linkpool/publish.py
+
       - name: 3) catalog-update.json uret
         run: python linkpool/make_catalog_update.py
+
+      - name: 3b) Uretilen dosyayi guvene al (checkout ezmesin)
+        run: cp linkpool/public/catalog-update.json "$RUNNER_TEMP/catalog-update.json"
+
       - name: 4) main'e commit (rebase ile)
         run: |
           git config user.name "linkpool-bot"
@@ -32,22 +48,46 @@ jobs:
           git diff --cached --quiet || git commit -m "linkpool: hourly verify"
           git pull --rebase origin main
           git push origin HEAD:main
+
       - name: 5) catalog dalina yaz
         run: |
+          set -e
           git config user.name "linkpool-bot"
           git config user.email "linkpool@users.noreply.github.com"
           if git ls-remote --exit-code --heads origin catalog >/dev/null 2>&1; then
+            echo "catalog dali var, uzerine yazilacak"
             git fetch origin catalog
             git checkout -B catalog origin/catalog
           else
+            echo "catalog dali yok, main'den olusturulacak"
             git fetch origin main
             git checkout -B catalog origin/main
           fi
-          cp linkpool/public/catalog-update.json ./catalog-update.json
+          # checkout, linkpool/public icindeki dosyayi ESKI haline dondurur:
+          # bu yuzden 3b adiminda alinan taze kopyayi kullaniyoruz.
+          cp "$RUNNER_TEMP/catalog-update.json" ./catalog-update.json
           git add catalog-update.json
           if git diff --cached --quiet; then
-            echo "degisiklik yok"
+            echo "degisiklik yok, yazilmadi"
           else
-            git commit -m "catalog: hourly link refresh"
+            git commit -m "catalog: hourly link refresh ($(date -u +%Y-%m-%dT%H:%MZ))"
             git push origin HEAD:catalog
+          fi
+
+      - name: 6) Suresi yaklasan linkleri bildir
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          python linkpool/check_expiry.py
+          TITLE_FILE="$RUNNER_TEMP/refresh-needed.txt"
+          BODY_FILE="$RUNNER_TEMP/refresh-body.md"
+          [ -f "$TITLE_FILE" ] || exit 0
+          TITLE="Link yenile: $(cat "$TITLE_FILE")"
+          OPEN=$(gh issue list --state open --search "Link yenile in:title" --json number --jq 'length' 2>/dev/null)
+          if [ "$OPEN" = "0" ] || [ -z "$OPEN" ]; then
+            gh issue create --title "$TITLE" --body-file "$BODY_FILE" || echo "issue acilamadi (yetki?)"
+          else
+            echo "acik bir 'Link yenile' issue zaten var ($OPEN)"
           fi
