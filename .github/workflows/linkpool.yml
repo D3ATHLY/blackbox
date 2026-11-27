@@ -1,8 +1,14 @@
 name: linkpool
 on:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "17 * * * *"      # saatlik dogrulama + yayin
   workflow_dispatch: {}
+  push:
+    paths:
+      - "linkpool/links/**"
+      - "linkpool/linkpool.py"
+      - "linkpool/publish.py"
+      - "linkpool/make_catalog_update.py"
 permissions:
   contents: write
 jobs:
@@ -10,17 +16,48 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Dogrula
+
+      - name: 1) Linkleri dogrula
         run: python linkpool/linkpool.py verify
-      - name: Yayin dosyalarini uret
+
+      - name: 2) Yayin JSON'u uret
         run: python linkpool/publish.py
-      - name: Commit
+
+      - name: 3) catalog-update.json uret
+        run: python linkpool/make_catalog_update.py
+
+      - name: 4) Sonucu main'e commit et
         run: |
           git config user.name "linkpool-bot"
           git config user.email "linkpool@users.noreply.github.com"
-          git add linkpool/verify-report.json linkpool/public/links || true
+          git add -A linkpool/verify-report.json linkpool/public
           git diff --cached --quiet || git commit -m "linkpool: hourly verify"
-          git push
+          git push origin HEAD:main
+
+      - name: 5) catalog dalina catalog-update.json yaz
+        run: |
+          set -e
+          git config user.name "linkpool-bot"
+          git config user.email "linkpool@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin catalog >/dev/null 2>&1; then
+            echo "catalog dali var, uzerine yazilacak"
+            git fetch origin catalog
+            git checkout -B catalog origin/catalog
+          else
+            echo "catalog dali yok, main'den olusturulacak"
+            git fetch origin main
+            git checkout -B catalog origin/main
+          fi
+          cp linkpool/public/catalog-update.json ./catalog-update.json
+          git add catalog-update.json
+          if git diff --cached --quiet; then
+            echo "degisiklik yok, yazilmadi"
+          else
+            git commit -m "catalog: hourly link refresh ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push origin HEAD:catalog
+          fi
