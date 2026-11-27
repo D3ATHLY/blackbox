@@ -35,6 +35,25 @@ PROVIDERS = {
         "signature_hint": ["X-Amz-Signature", "X-Amz-Expires"],
         "note": "AWS SigV4; imza URL'ye ait, farklı cihazdan çalışıyor (ölçüldü)",
     },
+    # Kalıcı sayfa linkleri (süresi dolmaz, uygulama tarayıcı akışıyla indirir):
+    "filekeeper": {
+        "label": "Filekeeper",
+        "ttl_hours": None,
+        "signature_hint": [],
+        "note": "kalıcı sayfa linki, requiresBrowser",
+    },
+    "akirabox": {
+        "label": "AkiraBox",
+        "ttl_hours": None,
+        "signature_hint": [],
+        "note": "kalıcı sayfa linki, requiresBrowser",
+    },
+    "vikingfile": {
+        "label": "Vikingfile (sayfa)",
+        "ttl_hours": None,
+        "signature_hint": [],
+        "note": "kalıcı sayfa linki, requiresBrowser",
+    },
     # yeni sağlayıcı örneği:
     # "datanodes": {"label": "DataNodes", "ttl_hours": 24, "signature_hint": ["token="], "note": ""},
 }
@@ -51,8 +70,12 @@ def all_tids() -> list[str]:
     return sorted(n[:-5] for n in os.listdir(LINKS) if n.endswith(".json"))
 
 
-def verify_url(url: str, expect_bytes: int | None = None) -> dict:
-    """HEAD yoksa Range 0-1023 ile ölç; PKG imzasını ve boyutu kontrol et."""
+def verify_url(url: str, expect_bytes: int | None = None, browser: bool = False) -> dict:
+    """HEAD yoksa Range 0-1023 ile ölç; PKG imzasını ve boyutu kontrol et.
+
+    browser=True: sayfa linki (filekeeper/akirabox) → yalnız erişilebilirlik,
+    PKG imzası/boyut aranmaz.
+    """
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Range": "bytes=0-1023"})
     started = time.time()
     try:
@@ -71,7 +94,21 @@ def verify_url(url: str, expect_bytes: int | None = None) -> dict:
     if m:
         total = int(m.group(1))
     magic_ok = head[:4] == PKG_MAGIC
-    size_ok = expect_bytes is None or total == expect_bytes
+    size_ok = expect_bytes is None or total is None or total == expect_bytes
+    if browser:
+        # sayfa linki: HTML döner, imza/boyut beklenmez
+        return {
+            "ok": status in (200, 206),
+            "http": status,
+            "bytes": total,
+            "pkg_magic": magic_ok,
+            "size_ok": True,
+            "browser": True,
+            "server": hdrs.get("server"),
+            "filename": (hdrs.get("content-disposition") or "")[:160],
+            "ms": round((time.time() - started) * 1000),
+            "checked_at": time.time(),
+        }
     return {
         "ok": status in (200, 206) and magic_ok and size_ok,
         "http": status,
@@ -92,7 +129,8 @@ def verify(tid: str | None = None) -> dict:
         data = load(t)
         rows = []
         for entry in data.get("links", []):
-            res = verify_url(entry["url"], entry.get("bytes"))
+            res = verify_url(entry["url"], entry.get("bytes"),
+                             browser=bool(entry.get("requiresBrowser")))
             unknown = entry.get("provider") not in PROVIDERS
             res["provider"] = entry.get("provider")
             res["unknown_provider"] = unknown
@@ -118,8 +156,10 @@ def notes() -> str:
              "", "## Doğrulanmış sağlayıcılar", "",
              "| Sağlayıcı | Etiket | Ömür | İmza | Not |", "|---|---|---|---|---|"]
     for key, p in PROVIDERS.items():
-        lines.append(f"| `{key}` | {p['label']} | {p['ttl_hours']} saat | "
-                     f"`{', '.join(p['signature_hint'])}` | {p['note']} |")
+        ttl = p["ttl_hours"]
+        lines.append(f"| `{key}` | {p['label']} | "
+                     f"{str(ttl) + ' saat' if ttl else 'kalıcı'} | "
+                     f"`{', '.join(p['signature_hint']) or '-'}` | {p['note']} |")
     lines += ["", "## Yeni sağlayıcı eklemek",
               "- Mantık aynıysa (URL'ye gömülü imza, IP bağlı değil) `PROVIDERS` sözlüğüne bir satır ekle.",
               "- Sonra `links/<TID>.json` içinde `provider` alanında bu anahtarı kullan.",
