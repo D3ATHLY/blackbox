@@ -2,7 +2,7 @@
  "titleId": "PPSA38500",
  "title": "Grand Theft Auto VI",
  "bytes": 216513692961,
- "generated": "2026-11-28T02:00:42Z",
+ "generated": "2026-11-28T10:29:44Z",
  "links": [
   {
    "provider": "viking",
@@ -10,7 +10,7 @@
    "bytes": 221028009318,
    "expires": 1795914494,
    "ok": true,
-   "checked_at": 1795831242.1817899
+   "checked_at": 1795861784.5955806
   },
   {
    "provider": "mocha",
@@ -18,8 +18,8 @@
    "bytes": 216513692961,
    "expires": 1795820650,
    "ok": false,
-   "checked_at": 1795831241.3288558,
-   "dead_at": 1795831241.3288558,
+   "checked_at": 1795861783.849174,
+   "dead_at": 1795861783.849174,
    "dead_reason": "HTTP 403"
   }
  ]
